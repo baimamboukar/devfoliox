@@ -22,12 +22,12 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Create service key file
-        run: echo "${GCP_SERVICE_KEY}" > gcp_service_key.json
+        run: echo "${{ secrets.GCP_SERVICE_KEY }}" > gcp_service_key.json
       - name: Print service key file contents
         run: cat gcp_service_key.json
       - name: Deploy to Google App Engine
         run: |
-          echo "${GCP_SERVICE_KEY}" > gcp_service_key.json
+          echo "${{ secrets.GCP_SERVICE_KEY }}" > gcp_service_key.json
           gcloud auth activate-service-account --key-file gcp_service_key.json
-          gcloud config set project maximus-tech-298704
+          gcloud config set project "${{ secrets.GCP_PROJECT_ID }}"
           gcloud app deploy app.yaml --quiet
