@@ -9,17 +9,20 @@
       name="keywords"
       content="Flutter, Baimam Boukar, Boukar, Flutter Engineer, Cloud Engineer"
     />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link
-      rel="shortcut icon"
-      type="image/x-icon"
-      href="assets/img/favicon.png"
-    />
+    <link rel="shortcut icon" type="image/x-icon" href={{url_for('static',
+    filename='img/images/self-kribi.jpg')}} />
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha384-5Q8n5+5XLZED5KDHl5n7X8HiHKE0mC+1EwzjgW8Q5o5/K+VEZ+cjKbJ0o9z+L0ikC7y1vve3qKjJtAAO+IcVKA=="
+      crossorigin="anonymous"
+    />
+
     <link
       rel="stylesheet"
       href="{{ url_for('static', filename='css/bootstrap.min.css') }}"
@@ -68,10 +71,8 @@
       <div id="loader" class="loader">
         <div class="loader-container">
           <div class="loader-icon">
-            <img
-              src="assets/img/preloader.png"
-              alt="Xolio - Creative Agency HTML5 Template"
-            />
+            <img src={{url_for('static', filename='img/images/self-kribi.jpg')}}
+            alt="Baimam Boukar JJ" />
           </div>
         </div>
       </div>
@@ -118,9 +119,9 @@
                   <div class="navbar-wrap main-menu d-none d-lg-flex">
                     <ul class="navigation">
                       <li class="active"><a href="#">Home</a></li>
-                      <li><a href="about-us.html">About Us</a></li>
-                      <li class=""><a href="#">pages</a></li>
-                      <li class=""><a href="#">News</a></li>
+                      <li><a href="#">Services</a></li>
+                      <li class=""><a href="#">Testimonials</a></li>
+                      <li class=""><a href="#">Contacts</a></li>
                     </ul>
                   </div>
                   <div class="header-action">
@@ -309,7 +310,8 @@
             <div class="col-xl-6 col-lg-5">
               <div class="banner-img-two">
                 <!-- <img src="assets/img/banner/h2_banner_img.png" alt=""> -->
-                <img src="assets/img/images/self-sf.jpg" alt="self" />
+                <img src={{url_for('static',
+                filename='img/images/self-sf.jpg')}} alt="self" />
               </div>
             </div>
             <div class="col-xl-6 col-lg-7">
