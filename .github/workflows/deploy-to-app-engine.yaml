@@ -1,33 +1,31 @@
+# This is a basic workflow to help you get started with Actions
+
 name: Deploy to Google App Engine
 
+# Controls when the workflow will run
 on:
+  # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches:
-      - main
+    branches: [main]
+  pull_request:
+    branches: [main]
 
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   deploy:
+    name: Deploying to Google Cloud
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Set up Python
-        uses: actions/setup-python@v2
+      - name: Deploy to App Engine
+        id: deploy
+        uses: google-github-actions/deploy-appengine@v0.2.0
         with:
-          python-version: 3.8
-
-      - name: Install dependencies
-        run: pip install -r requirements.txt
-
-      - name: Create service key file
-        run: echo "${{ secrets.GCP_SERVICE_KEY }}" > gcp_service_key.json
-      - name: Print service key file contents
-        run: cat gcp_service_key.json
-      - name: Deploy to Google App Engine
-        run: |
-          echo "${{ secrets.GCP_SERVICE_KEY }}" > gcp_service_key.json
-          gcloud auth activate-service-account --key-file gcp_service_key.json
-          gcloud config set project "${{ secrets.GCP_PROJECT_ID }}"
-          gcloud app deploy app.yaml --quiet
+          project_id: ${{ secrets.GCP_PROJECT_ID }}
+          credentials: ${{ secrets.GCP_SERVICE_KEY }}
