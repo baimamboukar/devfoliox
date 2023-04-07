@@ -20,6 +20,8 @@ jobs:
 
       - name: Install dependencies
         run: pip install -r requirements.txt
+      - name: Print service key file contents
+        run: cat gcp_service_key.json
 
       - name: Create service key file
         run: echo "${GCP_SERVICE_KEY}" > gcp_service_key.json
