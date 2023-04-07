@@ -19,8 +19,6 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-      integrity="sha384-5Q8n5+5XLZED5KDHl5n7X8HiHKE0mC+1EwzjgW8Q5o5/K+VEZ+cjKbJ0o9z+L0ikC7y1vve3qKjJtAAO+IcVKA=="
-      crossorigin="anonymous"
     />
 
     <link
@@ -35,10 +33,7 @@
       rel="stylesheet"
       href="{{ url_for('static', filename='css/magnific-popup.css') }}"
     />
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='css/fontawesome-all.min.css') }}"
-    />
+
     <link
       rel="stylesheet"
       href="{{ url_for('static', filename='css/swiper-bundle.min.css') }}"
@@ -62,6 +57,12 @@
     <link
       rel="stylesheet"
       href="{{ url_for('static', filename='css/responsive.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha384-5Q8n5+5XLZED5KDHl5n7X8HiHKE0mC+1EwzjgW8Q5o5/K+VEZ+cjKbJ0o9z+L0ikC7y1vve3qKjJtAAO+IcVKA=="
+      crossorigin="anonymous"
     />
   </head>
 
@@ -104,16 +105,7 @@
                 <nav class="menu-nav">
                   <div class="logo">
                     <a href="index.html" class="title"
-                      >baimamboukar<span>
-                        <div
-                          style="
-                            height: 20px;
-                            width: 20px;
-                            border-radius: 10px;
-                            background-color: red;
-                          "
-                        ></div>
-                      </span>
+                      >baimamboukar<span> </span>
                     </a>
                   </div>
                   <div class="navbar-wrap main-menu d-none d-lg-flex">
@@ -198,8 +190,8 @@
                               </svg>
                             </div>
                             <div class="content">
-                              <a href="mailto:company@gmail.com"
-                                >company@gmail.com</a
+                              <a href="mailto:baimamboukar@gmail.com"
+                                >baimamboukar@gmail.com</a
                               >
                             </div>
                           </li>
@@ -218,10 +210,7 @@
                               </svg>
                             </div>
                             <div class="content">
-                              <span
-                                >Ranelagh Place, Liverpool, L3 5UL,
-                                England</span
-                              >
+                              <span>Yaounde, Messassi</span>
                             </div>
                           </li>
                           <li>
@@ -240,7 +229,7 @@
                             </div>
                             <div class="content">
                               <span
-                                >7 Days a week <br />
+                                >5 days a week <br />
                                 from 10-00 am to 6-00 pm</span
                               >
                             </div>
@@ -255,17 +244,13 @@
                       <div class="our-best-project">
                         <div class="content">
                           <h4 class="title">
-                            One of Our <span>Best Ongoing</span> Projects
+                            One of my <span>Best Ongoing</span> Projects
                           </h4>
-                          <a href="project-details.html" class="btn"
-                            >Details <span></span
-                          ></a>
+                          <a href="#" class="btn">Details <span></span></a>
                         </div>
                         <div class="thumb">
-                          <img
-                            src="assets/img/images/our_project_img.png"
-                            alt=""
-                          />
+                          <img src={{url_for('static',
+                          filename='img/images/cosmo.png')}} alt="" />
                         </div>
                       </div>
                     </div>
@@ -274,21 +259,20 @@
               </div>
               <div class="col-lg-4">
                 <div class="customer-support-wrap">
-                  <h4 class="title">Customer Support</h4>
+                  <h4 class="title">Reach out</h4>
                   <div class="customer-support-content">
                     <div class="content-top">
                       <img src="assets/img/images/support_img.png" alt="" />
-                      <h4 class="title">Need Help Choosing a Plan?</h4>
+                      <h4 class="title">Have something to ask me ?</h4>
                     </div>
                     <p>
-                      We offer solutions for businesses of all sizes. For
-                      questions about our plans and products,, contact our team
-                      of experts. <a href="contact.html">Get in touch</a>
+                      I deliver high quality flutter apps
+                      <a href="#">Get in touch</a>
                     </p>
                   </div>
                   <div class="content-bottom">
-                    <a href="contact.html">Support</a>
-                    <a href="contact.html">Documentation</a>
+                    <a href="#">Support</a>
+                    <a href="#">Documentation</a>
                   </div>
                 </div>
               </div>
@@ -491,11 +475,12 @@
               <div class="services-item-two">
                 <div class="services-icon-two">
                   <img src={{url_for('static',
-                  filename="img/icon/services_icon01.png")}} alt="service" />
+                  filename="img/images/backend.png")}} alt={{service.name}}
+                  height="120px" width="120px" />
                 </div>
                 <div class="services-content-two">
                   <h2 class="title">
-                    <a href="services-details.html">{{service.name}}</a>
+                    <a href="#">{{service.name}}</a>
                   </h2>
                   <p>{{service.desc}}</p>
                 </div>
