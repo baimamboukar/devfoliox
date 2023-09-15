@@ -33,6 +33,7 @@ jobs:
           version_description: ${{github.SHA}}
           application_name: "devfolio"
           environment_name: "devfolio-env"
-          version_label: "v1.0.0"
+          existing_bucket_name: "devfolio-deployment-bucket"
+          version_label: "v1.0.0 - ${{github.SHA}}"
           region: us-west-2
           deployment_package: devfolio.zip
