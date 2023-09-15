@@ -31,8 +31,8 @@ jobs:
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           use_existing_version_if_available: true
           version_description: ${{github.SHA}}
-          application_name: "devfolio"
-          environment_name: "devfolio-env"
+          application_name: baimamboukar-devfolio
+          environment_name: baimamboukar-devfolio-env
           #existing_bucket_name: "devfolio-deployment-bucket"
           version_label: "v1.0.0 - ${{github.SHA}}"
           region: us-west-2
