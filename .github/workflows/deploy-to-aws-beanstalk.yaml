@@ -32,7 +32,7 @@ jobs:
           use_existing_version_if_available: true
           version_description: ${{github.SHA}}
           application_name: devfolio
-          environment_name: devfolio-prod-env
+          #environment_name: devfolio-prod-env
           #existing_bucket_name: "devfolio-deployment-bucket"
           version_label: "v1.0.0 - ${{github.SHA}}"
           region: us-west-2
