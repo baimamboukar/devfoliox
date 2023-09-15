@@ -6,7 +6,7 @@ permissions:
 
 jobs:
   auto-merge:
-    if: ${{ github.actor == 'dependabot[bot]' }}
+    if: ${{ github.actor == 'github-actions[bot]' }}
     runs-on: ubuntu-latest
 
     steps:
