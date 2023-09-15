@@ -1,5 +1,9 @@
 name: Deploy to AWS Beanstalk
 on:
+  pull_request:
+    branches:
+      - main
+      - dev
   push:
     branches:
       - main
