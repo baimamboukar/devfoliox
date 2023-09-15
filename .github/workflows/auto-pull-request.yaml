@@ -1,0 +1,25 @@
+name: Auto PR to Main
+
+on:
+  push:
+    branches:
+      - "*"
+
+jobs:
+  create_pr:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check Out Code
+        uses: actions/checkout@v2
+
+      - name: Create Pull Request
+        id: create_pr
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
+          commit-message: ${{github.sha}}
+          title: "Dev auto-PR -> Main"
+          body: "This PR was automatically created from GA."
+          labels: "auto-pr"
