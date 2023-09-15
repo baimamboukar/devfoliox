@@ -22,4 +22,4 @@ jobs:
           commit-message: ${{github.sha}}
           title: "Dev auto-PR -> Main"
           body: "This PR was automatically created from GA."
-          labels: "auto-pr"
+          labels: "auto-pull-request"
